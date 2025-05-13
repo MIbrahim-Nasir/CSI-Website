@@ -1,0 +1,371 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+:root {
+  --background: 0 0% 100%;
+  --foreground: 240 10% 3.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 3.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 3.9%;
+  --primary: 240 5.9% 10%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 240 4.8% 95.9%;
+  --secondary-foreground: 240 5.9% 10%;
+  --muted: 240 4.8% 95.9%;
+  --muted-foreground: 240 3.8% 46.1%;
+  --accent: 240 4.8% 95.9%;
+  --accent-foreground: 240 5.9% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 5.9% 90%;
+  --input: 240 5.9% 90%;
+  --ring: 240 5.9% 10%;
+  --radius: 0.5rem;
+  --main-bg: #0a0018;
+}
+ 
+.dark {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 0 0% 98%;
+  --primary-foreground: 240 5.9% 10%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --ring: 240 4.9% 83.9%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-dark text-foreground font-sans;
+    background-color: var(--main-bg);
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#F9A26C] via-[#EF6DA0] to-[#A05CEF];
+  }
+  
+  .process-gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#F47C7C] via-[#EF6DA0] to-[#F9A26C];
+  }
+  
+  .hero-gradient-button {
+    @apply bg-gradient-to-r from-[#EF6DA0] to-[#A05CEF];
+  }
+  
+  .star {
+    @apply absolute w-0.5 h-0.5 bg-white rounded-full opacity-30;
+  }
+  
+  .bigger-star {
+    @apply w-[3px] h-[3px] opacity-50;
+  }
+  
+  .nav-glassmorphism {
+    @apply bg-opacity-60 bg-gray-900 backdrop-blur-xl rounded-2xl border border-white border-opacity-5;
+  }
+  
+  .tab-glassmorphism {
+    @apply bg-opacity-60 bg-gray-900 backdrop-blur-xl rounded-2xl border border-white border-opacity-5;
+  }
+  
+  .announcement-pill {
+    @apply bg-opacity-60 bg-gray-900 backdrop-blur-sm rounded-full border border-white border-opacity-5;
+  }
+  
+  .tab-active {
+    @apply bg-white bg-opacity-10;
+  }
+  
+  .phone-glow {
+    @apply absolute w-full h-full z-[-1] blur-[25px];
+  }
+  
+  /* Tab styling based on original image */
+  .tabs-container {
+    display: inline-flex;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+  
+  .tab-list {
+    display: flex;
+    background: rgba(26, 14, 40, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 4px;
+    gap: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .tab-item {
+    padding: 12px 24px;
+    border-radius: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 15px;
+    transition: all 0.3s ease;
+    position: relative;
+    white-space: nowrap;
+  }
+  
+  .tab-item:hover {
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .tab-item.active {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .get-started-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+  }
+  
+  .get-started-btn:hover {
+    transform: translateX(4px);
+  }
+  
+  .tab-content {
+    min-height: 240px;
+  }
+  
+  .feature-icon-glow {
+    filter: blur(10px);
+    opacity: 0.7;
+  }
+
+  .feature-card {
+    @apply bg-opacity-20 bg-gray-900 rounded-3xl backdrop-blur-sm border border-white/5 relative overflow-hidden;
+    background: rgba(15, 8, 28, 0.6);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: 30%;
+    border-top: 1px solid rgba(149, 76, 233, 0.4);
+    border-left: 1px solid rgba(149, 76, 233, 0.4);
+    border-top-left-radius: 1.5rem;
+    pointer-events: none;
+  }
+  
+  .feature-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30%;
+    height: 30%;
+    border-bottom: 1px solid rgba(149, 76, 233, 0.4);
+    border-right: 1px solid rgba(149, 76, 233, 0.4);
+    border-bottom-right-radius: 1.5rem;
+    pointer-events: none;
+  }
+  
+  .feature-glow-blob {
+    @apply absolute rounded-full blur-[80px];
+    background: radial-gradient(circle, rgba(149, 76, 233, 0.2), transparent 70%);
+    width: 200px;
+    height: 200px;
+    right: -50px;
+    bottom: -50px;
+    z-index: -1;
+    pointer-events: none;
+  }
+  
+  .feature-icon {
+    @apply rounded-xl flex items-center justify-center relative z-10;
+    background: rgba(20, 10, 30, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    width: 64px;
+    height: 64px;
+  }
+  
+  .feature-icon-purple {
+    box-shadow: 0 0 30px 5px rgba(149, 76, 233, 0.8);
+  }
+  
+  .feature-icon-blue {
+    box-shadow: 0 0 30px 5px rgba(59, 130, 246, 0.8);
+  }
+  
+  .feature-icon-pink {
+    box-shadow: 0 0 30px 5px rgba(236, 72, 153, 0.8);
+  }
+  
+  .customers-gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(90deg, #FFA63D 0%, #FF576D 100%);
+  }
+  
+  .section-container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8 py-24 relative z-10 max-w-7xl;
+  }
+
+  /* Testimonial section styles */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  @media (min-width: 768px) {
+    .testimonials-grid {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-areas:
+        "card1 card1 featured featured card4 card4"
+        "card2 card2 featured featured card5 card5";
+      grid-template-rows: auto auto;
+    }
+    
+    .testimonials-grid > div:nth-child(1) {
+      grid-area: card1;
+    }
+    
+    .testimonials-grid > div:nth-child(2) {
+      grid-area: card2;
+    }
+    
+    .testimonials-grid > div:nth-child(3) {
+      grid-area: featured;
+    }
+    
+    .testimonials-grid > div:nth-child(4) {
+      grid-area: card4;
+    }
+    
+    .testimonials-grid > div:nth-child(5) {
+      grid-area: card5;
+    }
+  }
+  
+  .testimonial-card {
+    @apply bg-opacity-20 bg-gray-900 rounded-3xl backdrop-blur-sm border border-white/5 p-6;
+    background: rgba(15, 8, 28, 0.6);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .featured-testimonial {
+    grid-area: featured;
+    padding-bottom: 0;
+  }
+  
+  .featured-image-container {
+    aspect-ratio: 1 / 1.2;
+    background-color: #1a0e28;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    position: relative;
+    background-image: url('/featured-testimonial.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* Blog section styles */
+  .blog-section {
+    position: relative;
+  }
+  
+  .blog-section::before {
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0) 100%);
+    top: 0;
+    left: 10%;
+  }
+  
+  .blog-card {
+    transition: all 0.3s ease;
+  }
+  
+  .blog-card:hover {
+    transform: translateY(-8px);
+  }
+  
+  .blog-image-container {
+    overflow: hidden;
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .blog-image-container img {
+    transition: transform 1.2s ease;
+  }
+  
+  .blog-card:hover .blog-image-container img {
+    transform: scale(1.05);
+  }
+}
+
+/* Add regular keyframes outside of Tailwind layers to avoid syntax issues */
+@keyframes twinkle {
+  0% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+  100% { opacity: 0.3; }
+}
+
+/* Custom features glow animation */
+@keyframes softPulse {
+  0% { opacity: 0.5; }
+  50% { opacity: 0.8; }
+  100% { opacity: 0.5; }
+}
+
+/* Define a utility class for phone glow that uses a standard background definition */
+.phone-glow {
+  background: radial-gradient(circle at center, rgba(160, 92, 239, 0.3) 0%, rgba(12, 6, 23, 0) 70%);
+}
+
+.main-bg {
+  background-color: var(--main-bg);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+}
+
+.stars-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.fade-out-stars {
+  opacity: 0;
+  transition: opacity 0.8s ease-out;
+}

@@ -1,0 +1,7 @@
+This file is just a placeholder. You should add the following images to your public directory:
+
+- avatar1.png through avatar5.png (for the testimonial avatars)
+- user1.png through user5.png (for the social proof avatars)
+- featured-testimonial.jpg (for the featured testimonial image)
+
+These should be properly sized images matching those in the design.
