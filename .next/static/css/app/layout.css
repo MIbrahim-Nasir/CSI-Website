@@ -840,6 +840,9 @@ video {
 .relative {
   position: relative;
 }
+.sticky {
+  position: sticky;
+}
 .inset-0 {
   inset: 0px;
 }
@@ -870,8 +873,14 @@ video {
 .top-0 {
   top: 0px;
 }
+.top-\[5px\] {
+  top: 5px;
+}
 .z-10 {
   z-index: 10;
+}
+.z-50 {
+  z-index: 50;
 }
 .mx-auto {
   margin-left: auto;
@@ -1322,6 +1331,9 @@ video {
 }
 .pt-8 {
   padding-top: 2rem;
+}
+.pt-3 {
+  padding-top: 0.75rem;
 }
 .text-center {
   text-align: center;

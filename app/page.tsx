@@ -10,10 +10,7 @@ import Blog from '@/components/Blog'
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
-        <Navbar />
-      </div>
-      
+      <Navbar />
       <Hero />
       <Process />
       <Features />
